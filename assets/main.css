@@ -1,0 +1,80 @@
+.soroban {
+    background-image: url('/ban-tinh-12.png');
+   background-repeat: no-repeat;
+   height: 100vh;
+   background-size: contain;
+   width: 1400px;
+   overflow-x: scroll;
+   margin: auto;
+   padding: 0 70px;
+ }
+ .hat-five {
+   background-image: url('/hat_xanh.png');
+   width: 89px;
+   background-size: contain;
+   background-repeat: no-repeat;
+   height: 55px;
+   position: relative;
+   transition: 0.3s ease all;
+   top: 20px;
+ }
+ .hat-one div{
+   background-image: url('/hat_cam.png');
+   background-repeat: no-repeat;
+   width: 95px;
+   background-size: contain;
+   height: 42px;
+   transition: 0.3s ease all;
+ }
+ .hat-one {
+   position: relative;
+   bottom: -130px;
+   transition: 0.3s ease all;
+ }
+ .soroban .hanghat:first-child {
+   margin: 0 8px 0 0;
+ }
+ .active-1 .one-1 {
+   top: -54px;
+   position: relative;
+   transition: 0.3s ease all;
+ }
+ .active-2 .one-2 {
+   top: -54px;
+   position: relative;
+ }
+ .active-3 .one-3 {
+   top: -54px;
+   position: relative;
+ }
+ .active-4 .one-4 {
+   top: -54px;
+   position: relative;
+ }
+ .hanghat {
+   margin: 0 6.2px;
+     width: 85px;
+     height: 353px;
+ }
+ .active-hat-five {
+   top: 74px;
+   position: relative;
+ }
+ .bg-bantinh {
+   background: radial-gradient(circle,#3a0475 0,#000333 80%);
+   padding-top: 25vh;
+ }
+ .result {
+     width: 15rem;
+   margin: auto;
+   /* padding-top: 11px; */
+   padding: 4px 0px;
+   background: linear-gradient(
+ 180deg
+ , #EC78F9 0.07%, #CB58E9 18.73%, #A836D9 41.82%, #8F1ECE 63.72%, #800FC6 83.67%, #7B0AC4 99.93%);
+   border-radius: 40px;
+   border: 3px solid white;
+   margin-bottom: 14px;
+   font-family: system-ui;
+   font-size: 25px;
+ }
