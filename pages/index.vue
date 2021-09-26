@@ -1,10 +1,15 @@
 <template>
   <div class="bg-bantinh">
+    <div class="text-center mb-4">
+      <button class="load-ban-tinh" @click="reLoad">
+        <img src="/load.png" alt="">
+      </button>
+    </div>
     <div class="text-center text-white result">
       {{ count }}
     </div>
     <div class="soroban flex">
-      <div v-for="i in hanghat" :key="i" class="hanghat" :class="`hanghat-${14-i}`">
+      <div v-for="i in hanghat" :key="i" class="hanghat" :class="`hanghat-${hanghat + 1 - i}`">
         <div :id="`hat-five-${i}`" class="hat-five" @click="runHatFive($event)" />
         <div :id="`hat-one-${i}`" class="hat-one">
           <div :id="`one-1-${i}`" class="one-1" @click="runHatOne($event)" />
@@ -179,6 +184,34 @@ export default {
         default:
           break
       }
+    },
+    reLoad () {
+      const elementHatFive = document.getElementsByClassName('active-hat-five')
+      elementHatFive.forEach((element) => {
+        removeClass(element, 'active-hat-five')
+        this.reLoad()
+      })
+      const elementHatOne1 = document.getElementsByClassName('active-1')
+      elementHatOne1.forEach((element) => {
+        removeClass(element, 'active-1')
+        this.reLoad()
+      })
+      const elementHatOne2 = document.getElementsByClassName('active-2')
+      elementHatOne2.forEach((element) => {
+        removeClass(element, 'active-2')
+        this.reLoad()
+      })
+      const elementHatOne3 = document.getElementsByClassName('active-3')
+      elementHatOne3.forEach((element) => {
+        removeClass(element, 'active-3')
+        this.reLoad()
+      })
+      const elementHatOne4 = document.getElementsByClassName('active-4')
+      elementHatOne4.forEach((element) => {
+        removeClass(element, 'active-4')
+        this.reLoad()
+      })
+      this.count = 0
     }
   }
 }
