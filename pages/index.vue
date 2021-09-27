@@ -9,15 +9,17 @@
       {{ count }}
     </div>
     <div class="soroban flex">
+      <div class="bg-col-left" />
       <div v-for="i in hanghat" :key="i" class="hanghat" :class="`hanghat-${hanghat + 1 - i}`">
-        <div :id="`hat-five-${i}`" class="hat-five" @click="runHatFive($event)" />
+        <div :id="`hat-five-${i}`" class="hat-five" @click="runSeedFive($event)" />
         <div :id="`hat-one-${i}`" class="hat-one">
-          <div :id="`one-1-${i}`" class="one-1" @click="runHatOne($event)" />
-          <div :id="`one-2-${i}`" class="one-2" @click="runHatOne($event)" />
-          <div :id="`one-3-${i}`" class="one-3" @click="runHatOne($event)" />
-          <div :id="`one-4-${i}`" class="one-4" @click="runHatOne($event)" />
+          <div :id="`one-1-${i}`" class="one-1" @click="runSeedOne($event)" />
+          <div :id="`one-2-${i}`" class="one-2" @click="runSeedOne($event)" />
+          <div :id="`one-3-${i}`" class="one-3" @click="runSeedOne($event)" />
+          <div :id="`one-4-${i}`" class="one-4" @click="runSeedOne($event)" />
         </div>
       </div>
+      <div class="bg-col-right" />
     </div>
   </div>
 </template>
@@ -35,7 +37,8 @@ export default {
   data () {
     return {
       count: 0,
-      hanghat: 13
+      hanghat: 8,
+      d: 0
     }
   },
   methods: {
@@ -48,7 +51,7 @@ export default {
       } while (element)
       return false
     },
-    runHatFive (event) {
+    runSeedFive (event) {
       const element = document.getElementById(event.currentTarget.id)
       const nameClassParent = element.parentNode.classList[1]
       if (this.hasClass(element, 'active-hat-five') === false) {
@@ -59,7 +62,7 @@ export default {
         this.count -= calculateFive(nameClassParent)
       }
     },
-    runHatOne (event) {
+    runSeedOne (event) {
       const element = document.getElementById(event.currentTarget.id)
       const elementParent = document.getElementById(element.parentNode.id)
       const nameClassParent = elementParent.parentNode.classList[1]
@@ -93,6 +96,10 @@ export default {
             removeClass(elementParent, 'active-1')
             this.count -= calculate(nameClassParent)
           }
+          if (this.hasClass(elementParent, 'active-1') === true && this.d === 0) {
+            this.count = 0
+            this.d++
+          }
           break
 
         case 'one-2':
@@ -119,6 +126,14 @@ export default {
           } else if (this.hasClass(elementParent, 'active-1') === true) {
             addClass(elementParent, 'active-2')
             this.count += calculate(nameClassParent)
+          }
+          if (this.hasClass(elementParent, 'active-1') === true && this.d === 0) {
+            this.count = 0
+            this.d++
+          }
+          if (this.hasClass(elementParent, 'active-2') === true && this.d === 0) {
+            this.count = 0
+            this.d++
           }
           break
         case 'one-3':
@@ -148,6 +163,10 @@ export default {
           } else {
             removeClass(elementParent, 'active-3')
             this.count -= calculate(nameClassParent)
+          }
+          if (this.hasClass(elementParent, 'active-3') === true && this.d === 0) {
+            this.count = 0
+            this.d++
           }
           break
         case 'one-4':
@@ -179,11 +198,17 @@ export default {
             removeClass(elementParent, 'active-4')
             this.count -= calculate(nameClassParent)
           }
+          if (this.hasClass(elementParent, 'active-4') === true && this.d === 0) {
+            this.count = 0
+            this.d++
+          }
           break
-
         default:
           break
       }
+      if (this.hasClass(elementParent, 'active-1') === false && this.hasClass(elementParent, 'active-2') === false &&
+      this.hasClass(elementParent, 'active-3') === false &&
+      this.hasClass(elementParent, 'active-4') === false) { this.count = 0 }
     },
     reLoad () {
       const elementHatFive = document.getElementsByClassName('active-hat-five')

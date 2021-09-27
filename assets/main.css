@@ -1,22 +1,23 @@
 .soroban {
-    background-image: url('/ban-tinh-12.png');
+    /* background-image: url('/ban-tinh-12.png'); */
    background-repeat: no-repeat;
    height: 500px;
    background-size: contain;
    width: 1400px;
    /* width: 76.4%; */
    margin: auto;
-   padding: 0 70px;
+   justify-content: center;
  }
  .hat-five {
-   background-image: url('/hat_xanh.png');
-   width: 89px;
-   background-size: contain;
-   background-repeat: no-repeat;
-   height: 55px;
-   position: relative;
-   transition: 0.3s ease all;
-   top: 20px;
+    background-image: url(/hat_xanh.png);
+    width: 94px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 43px;
+    position: relative;
+    transition: 0.3s ease all;
+    top: 20px;
+    left: 3px;
  }
  .hat-one div{
    background-image: url('/hat_cam.png');
@@ -28,36 +29,38 @@
  }
  .hat-one {
    position: relative;
-   bottom: -130px;
+   bottom: -168px;
    transition: 0.3s ease all;
- }
- .soroban .hanghat:first-child {
-   margin: 0 8px 0 0;
+   left: 4px;
  }
  .active-1 .one-1 {
-   top: -54px;
+   top: -68px;
    position: relative;
    transition: 0.3s ease all;
  }
  .active-2 .one-2 {
-   top: -54px;
+   top: -68px;
    position: relative;
  }
  .active-3 .one-3 {
-   top: -54px;
+   top: -68px;
    position: relative;
  }
  .active-4 .one-4 {
-   top: -54px;
+   top: -68px;
    position: relative;
  }
  .hanghat {
-   margin: 0 6.2px;
-     width: 85px;
-     height: 353px;
+    background-image: url(/thanh_doc.png);
+    background-repeat: no-repeat;
+    /* margin: 0 6.2px; */
+    /* width: 85px; */
+    height: 411px;
+    background-size: 102%;
+    padding-left: 0px;
  }
  .active-hat-five {
-   top: 74px;
+   top: 84px;
    position: relative;
  }
  .bg-bantinh {
@@ -85,3 +88,21 @@
     background: rgb(255 255 255 / 16%);
     border-radius: 55px;
  }
+ .bg-col-left {
+    background-image: url('/khung_trai.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 89px;
+    height: 402px;
+    position: relative;
+    left: 25px;
+ }
+ .bg-col-right {
+    background-image: url('/khung_phai.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 89px;
+    height: 402px;
+    position: relative;
+    left: 0px;
+}
